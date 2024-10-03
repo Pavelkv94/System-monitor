@@ -1,0 +1,61 @@
+body {
+  background-color: #111827;
+  color: white;
+  font-family: "Inter", sans-serif;
+
+}
+
+#root {
+  background: gray;
+  display: flex;
+  align-items: center;
+}
+
+.block {
+  padding: 10px;
+  border-radius: calc(0.5rem + 4px);
+  border: 1px solid #3741514d;
+  background-color: #1f2937;
+}
+#os {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* /////////// */
+.ring {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+svg {
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 15;
+}
+
+.background {
+  stroke: #ddd;
+}
+
+.progress {
+  stroke: #4caf50;
+  transition: stroke-dasharray 0.5s ease;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  text-align: center;
+}
