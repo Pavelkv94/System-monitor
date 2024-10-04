@@ -1,14 +1,17 @@
 const { app, BrowserWindow, Menu } = require("electron");
 const path = require("path");
-const getOsModule = require("./modules/os.module");
-const getTempInfoModule = require("./modules/cpu.module");
-const getDiskModule = require("./modules/disk.module");
-const getNetworkModule = require("./modules/network.module");
+const getOsModule = require("./modules/os/os.module");
+const getTempInfoModule = require("./modules/cpu/cpu.module");
+const getDiskModule = require("./modules/disk/disk.module");
+const getNetworkModule = require("./modules/network/network.module");
+const getRamModule = require("./modules/ram/ram.module");
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
+    width: 1100,
     height: 600,
+    minWidth: 800,
+    minHeight: 500,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
@@ -18,7 +21,7 @@ function createWindow() {
 
   win.loadFile("index.html");
 
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
@@ -39,3 +42,4 @@ getOsModule();
 getTempInfoModule();
 getDiskModule();
 getNetworkModule();
+getRamModule();

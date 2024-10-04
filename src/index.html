@@ -5,48 +5,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
 
     <title>System Info</title>
   </head>
   <body>
     <div id="os" class="block"></div>
+    <div id="ram" class="block"></div>
     <div id="cpu" class="block"></div>
     <div id="disk" class="block"></div>
     <div id="network" class="block"></div>
 
-    <div class="ring">
-      <svg width="200" height="200">
-        <circle class="background" cx="100" cy="100" r="90"></circle>
-        <circle class="progress" cx="100" cy="100" r="90"></circle>
-      </svg>
-      <div class="label" id="label">0%</div>
-    </div>
-    <script src="./render.js"></script>
-    <script>
-      function setFill(value) {
-        const progressCircle = document.querySelector(".progress");
-        const labelElement = document.getElementById("label");
-
-        // Clamp value between 0 and 100
-        value = Math.max(0, Math.min(100, value));
-        const radius = 90;
-        const circumference = 2 * Math.PI * radius;
-
-        // Calculate the stroke-dasharray value
-        const fillAmount = (value / 100) * circumference;
-        progressCircle.style.strokeDasharray = `${fillAmount} ${circumference}`;
-
-        // Update the label
-        labelElement.textContent = `${value}%`;
-      }
-
-      // Example: Fill the indicator to 75%
-      setFill(25);
-
-      // You can change the value here to test different fills
-      // setFill(50);
-      // setFill(100);
-    </script>
+    <script src="./render.js" type="module"></script>
   </body>
 </html>

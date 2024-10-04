@@ -5,4 +5,6 @@ contextBridge.exposeInMainWorld("api", {
   getCpuInfo: () => ipcRenderer.invoke("system-cpu"),
   getDiskInfo: () => ipcRenderer.invoke("system-disk"),
   getNetworkInfo: () => ipcRenderer.invoke("system-network"),
+  getRamInfo: () => ipcRenderer.invoke("system-ram"),
+
 });
